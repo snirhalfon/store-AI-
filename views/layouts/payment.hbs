@@ -1,0 +1,27 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>תשלום</title>
+    <link rel="stylesheet" href="style.css"> <!-- הפניה לקובץ ה-CSS שלך -->
+</head>
+<body>
+    <form id="payment-form" action="/payment" method="POST">
+        <!-- שדות הטופס -->
+        <input type="email" name="email" placeholder="אימייל">
+        <input type="text" name="firstName" placeholder="שם פרטי">
+        <input type="text" name="lastName" placeholder="שם משפחה">
+        <input type="text" name="country" placeholder="ארץ">
+        <input type="text" name="street" placeholder="רחוב">
+        <input type="text" name="zipCode" placeholder="מיקוד">
+        <input type="text" name="cardNumber" placeholder="מספר כרטיס אשראי">
+        <input type="text" name="expiryDate" placeholder="תאריך תפוגה">
+        <input type="text" name="cvv" placeholder="CVV">
+        <input type="checkbox" name="saveCard" id="saveCard">
+        <label for="saveCard">שמור פרטי כרטיס אשראי</label>
+        <button type="submit">שלח</button>
+    </form>
+    <script src="script.js"></script> <!-- הפניה לקובץ ה-JavaScript שלך -->
+</body>
+</html>

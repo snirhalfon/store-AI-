@@ -1,0 +1,74 @@
+
+<!-- תמונת ה-GIF עם קלאס 'emoji' -->
+<div class="container">
+ <h1>ברוכים הבאים לדף הבית של החנות</h1> <!-- כותרת מעוצבת -->
+        <p>
+            חנות המותגים שלנו מתמחה בספק מוצרים איכותיים וטרנדים לעולם האופנה.
+            אנו כאן כדי להציע לכם את האיכות הגבוהה ביותר ולהעניק לכם חוויה קנייה מושלמת!
+        </p> 
+         <p>למטה  נמצא חברי הנאמן ג'ימיני והוא יכול לענות לכול שאלה שתיהיה לכם אם תרצו להעשיר את הידע תוך כדי סיבוב בחנות תהנו</p>
+
+
+  <div class="card-input">
+    <img src="pics/gif.gif" alt="Emoji" class="emoji">
+    <input type="text" id="userGenerate" placeholder="Enter your message to Gemini" />
+    <button type="button" class="card-button" id="btnGenerateText">Send</button>
+  </div>
+  <div class="text-area" id="textArea"></div>
+
+<div class="sidebar">
+  <div class="stat">
+    <p>מבקרים</p>
+    <span>{{visitorCount}}</span>
+  </div>
+  <div class="stat">
+    <p>רכישות</p>
+    <span>{{purchaseCount}}</span>
+  </div>
+  <div class="stat">
+    <p>פידבקים</p>
+    <span>{{feedbackCount}}</span>
+  </div>
+</div>
+</div>
+
+
+<div class="feedback-section">
+  <h2>נשמע את דעתכם</h2>
+  <form id="feedbackForm" action="/feedback">
+    <div class="form-group">
+      <label for="feedbackContent">תוכן הפידבק:</label>
+      <textarea id="feedbackContent" name="content" rows="5" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="feedbackRating">דירוג:</label>
+      <select id="feedbackRating" name="rating" required>
+        <option value="">בחר דירוג...</option>
+        <option value="1">1 - לא טוב</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - מעולה</option>
+      </select>
+    </div>
+    <button type="submit">שלח פידבק</button>
+  </form>
+</div>
+
+
+<script>
+document.getElementById('btnGenerateText').addEventListener("click", (event)=> {
+  let Prompt = document.getElementById('userGenerate').value;
+  console.log(Prompt);
+
+  fetch('/home', {
+    method: 'POST',
+    body: JSON.stringify({ Prompt }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(res=> res.json()).then((data)=> {
+    document.getElementById('textArea').innerText = data.text; // הצגת התשובה בתיבת הטקסט
+  });
+});
+</script>

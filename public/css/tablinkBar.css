@@ -1,0 +1,144 @@
+/*
+
+
+
+
+ברוך הבא! הקוד CSS הזה עוצב כך שיעזור ליצירת מצגת תמונות בדף האינטרנט. בוא נבחן את כל חלקי הקוד בפרטים:
+
+* {box-sizing: border-box}: זה מאמר לכל האלמנטים בדף לחשוב על הגודל שלהם כולל את הגודל של הגבולות והרווחים שלהם.
+
+body {font-family: Verdana, sans-serif; margin:0}: נראה שהקוד מגדיר את הפונט של הטקסט בדף להיות מהסוג Verdana או ממשפחת הפונטים sans-serif ומגדיר גם את המרווח בקצוות הדף להיות 0 (מרווחים אפסיים).
+
+.mySlides {display: none}: כאשר יש אלמנט עם מחלקה בשם mySlides, הקוד הזה מסתיר אותו מהתצוגה.
+
+img {vertical-align: middle;}: קובע את היישור האנכי של כל התמונות להיות במרכז האנכי של השורה שבה הן מופיעות.
+
+.slideshow-container: יצירת אלמנט שבו מוצגת המצגת של התמונות. הוא מוגדר עם עיצוב מיקום יחסי, גודל תמונה מתאים לרוחב ולגובה של המצגת, וכן קיבוע התמונה במרכז.
+
+.prev, .next: הגדרה של כפתורי ההחלפה שמוצגים בצדדים. הם מוגדרים עם מיקום אבסולוטי, מרכובים למעלה ב-50% של העמוד, עם עיצוב ואפקטים בעת העברת העכבר עליהם.
+
+.text ו־.numbertext: כיתובים שמוצגים מעל ומתחת לתמונות, מיועדים לספק מידע נוסף או כיתובים על התמונות.
+
+.dot: נקודות המייצגות את התמונות במצגת. הן מוגדרות כאלמנטים בצורת כדורים בעלי רדיוס מעגלי, ומשנות את הצבע על פי העברת העכבר מעליהם.
+
+.fade: הגדרת אנימציה עבור העברת תמונות. האנימציה נקראת fade וכוללת שינוי באטימות מ-.4 ל-1.
+
+@media only screen and (max-width: 300px): קביעת ערכים למאפיינים בגודל מסך קטן, כגון גודל טקסט קטן יותר עבור מסכים ברוחב של עד 300 פיקסלים.
+
+
+/* Style adjustments for slideshow */
+* {
+  box-sizing: border-box; /* מגדיר שהגבולות וה-padding יחושבו כחלק מהרוחב והגובה של האלמנט */
+}
+body {
+  font-family: Verdana, sans-serif; /* מגדיר את סוג הגופן בכל הדף */
+  margin: 0; /* מסיר שוליים מהדף */
+}
+.mySlides {
+  display: none; /* הסתרת כל הסליידים כברירת מחדל */
+}
+img {
+  vertical-align: middle; /* מיישר אנכית את התמונות לאמצע */
+  max-width: 100%; /* מוודא שהתמונות לא יחרגו מרוחב האלמנט המכיל אותן */
+  height: auto; /* מתאים את גובה התמונות באופן אוטומטי לרוחב */
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative; /* מגדיר את האלמנט כיחסי, מאפשר חיפוי של אלמנטים בתוכו */
+  max-width: 100%; /* רוחב מרבי של האלמנט */
+  margin: auto; /* ממרכז את האלמנט באמצע הדף */
+  background-size: cover; /* התמונה תכסה את כל האלמנט */
+  background-repeat: no-repeat; /* התמונה לא תחזור על עצמה */
+  background-position: center; /* ממרכז את התמונה באלמנט */
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer; /* הופך את הסמן לסמן קליק כשמעבירים מעל */
+  position: absolute; /* מיקום מוחלט ביחס לאלמנט האב */
+  top: 50%; /* ממקם במרכז האלמנט מבחינה אנכית */
+  width: auto; /* רוחב אוטומטי בהתאם לתוכן */
+  padding: 16px; /* מרווח בפנים האלמנט */
+  margin-top: -22px; /* מתקן את המיקום האנכי של הכפתורים */
+  color: white; /* צבע הטקסט */
+  font-weight: bold; /* עובי הגופן */
+  font-size: 18px; /* גודל הגופן */
+  transition: 0.6s ease; /* אפקט מעבר חלק לשינויים */
+  border-radius: 0 3px 3px 0; /* קימור פינות */
+  user-select: none; /* מונע בחירה של הטקסט */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0; /* ממקם את הכפתור הבא בצד ימין */
+  border-radius: 3px 0 0 3px; /* קימור פינות לכפתור הבא */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* צבע רקע כהה עם שקיפות בעת העברת העכבר */
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2; /* צבע הטקסט */
+  font-size: 15px; /* גודל הטקסט */
+  padding: 8px 12px; /* מרווח בפנים האלמנט */
+  position: absolute; /* מיקום מוחלט */
+  bottom: 8px; /* מרחק מתחתית האלמנט */
+  width: 100%; /* רוחב מלא */
+  text-align: center; /* יישור הטקסט למרכז */
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2; /* צבע הטקסט */
+  font-size: 12px; /* גודל הטקסט */
+  padding: 8px 12px; /* מרווח בפנים האלמנט */
+  position: absolute; /* מיקום מוחלט */
+  top: 0; /* מרחק מראש האלמנט */
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer; /* הופך את הסמן לסמן קליק */
+  height: 15px; /* גובה */
+  width: 15px; /* רוחב */
+  margin: 0 2px; /* מרווחים מצדדים */
+  background-color: #bbb; /* צבע רקע */
+  border-radius: 50%; /* עיגול האלמנט */
+  display: inline-block; /* מציג את האלמנט בשורה עם אלמנטים אחרים */
+  transition: background-color 0.6s ease; /* אפקט מעבר חלק לשינוי צבע */
+}
+
+.active,
+.dot:hover {
+  background-color: #717171; /* שינוי צבע רקע בעת לחיצה או העברת העכבר */
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade; /* שם האנימציה */
+  animation-duration: 1.5s; /* משך זמן האנימציה */
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4; /* התחלת האנימציה משקיפות נמוכה */
+  }
+  to {
+    opacity: 1; /* סיום האנימציה בשקיפות מלאה */
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px; /* קטן את גודל הטקסט למסכים קטנים */
+  }
+}

@@ -1,0 +1,27 @@
+/* עיצוב הcontainer */
+.container {
+  display: flex;
+  justify-content: center; /* מרכז את הcontainer באמצע של הדף */
+  align-items: center; /* מרכז את התוכן באמצעות גובה ורוחב */
+}
+
+/* עיצוב התמונות */
+.card-img-top {
+  border-radius: 5px; /* מעגל פינות רקומות מעט */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* צל מעט מעוצב */
+  transition: transform 0.3s ease-in-out; /* אנימציה קלה כאשר העכבר עובר מעל תמונה */
+  width: 150px; /* רוחב קבוע של תמונה */
+  height: auto; /* גובה אוטומטי */
+  margin: 10px; /* מרווח בין התמונות */
+}
+
+/* אנימציה קטנה כאשר העכבר עובר מעל תמונה */
+.card-img-top:hover {
+  transform: scale(1.03); /* מגדיל את התמונה קצת כאשר העכבר עובר מעליה */
+}
+/* עיצוב ה-row */
+.row {
+  display: flex; /* הפיכת ה-row ל- Flexbox */
+  flex-wrap: wrap; /* כדי שהתמונות ימשיכו להתפשט כאשר נמשיך להוסיף */
+  justify-content: center; /* מרכוז כל התמונות באמצע ה-row */
+}

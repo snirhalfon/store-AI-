@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: column; /* עדיין שומר על כיוון הפריטים לפי עמודה */
+  justify-content: flex-start; /* מיישר את התוכן לתחילת הקונטיינר */
+  align-items: center; /* שומר על יישור האלמנטים למרכז באופן אופקי */
+  height: auto; /* מתאם את הגובה לתוכן במקום גובה מלא של המסך */
+}
+
+
+/* עיצוב של תיבת הקלט והכפתור */
+.card-input {
+  display: flex;
+  flex-direction: column; /* שינוי כיוון הפריטים לעמודה */
+  align-items: center; /* מרכז את התוכן אנכית */
+  width: 300px;
+  padding: 20px; /* פנים ריק מסביב */
+  background-color: #f9f9f9; /* צבע רקע */
+  border-radius: 10px; /* פינות מעוגלות */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* הוספת צל */
+  margin-bottom:20px; /* מרווח מתחת לתיבה */
+}
+
+/* עיצוב של שדה הקלט */
+.card-input input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* מרווח בין השדה לכפתור */
+  border: 1px solid #ccc; /* גבול השדה */
+  border-radius: 5px; /* פינות השדה מעוגלות */
+  font-size: 16px; /* גודל הטקסט */
+}
+
+/* עיצוב של הכפתור */
+.card-input button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0bce32; /* צבע רקע */
+  color: #fff; /* צבע הטקסט */
+  border: none; /* אין גבול */
+  border-radius: 5px; /* פינות מעוגלות */
+  cursor: pointer; /* הופך את העכבר לסמן קליק */
+  transition: background-color 0.3s ease; /* מעבר חלק בשינוי הצבע */
+}
+
+/* השינוי בעיצוב של הכפתור כאשר העכבר עובר עליו */
+.card-input button:hover {
+  background-color: #0056b3; /* צבע רקע בהובר */
+}
+
+/* עיצוב של אזור התיבת טקסט עבור התוצאות */
+.text-area {
+  width: 300px; /* אותו רוחב כמו של הכרטיס */
+  padding: 10px; /* פנים ריק */
+  background-color: #f9f9f9; /* צבע רקע */
+  border-radius: 10px; /* פינות מעוגלות */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* הוספת צל */
+}
+
+/* עיצוב האימוג'י */
+.emoji {
+  width: 50px; /* רוחב */
+  height: 50px; /* גובה */
+}
+
+/* עיצוב כותרת מעוצבת */
+h1 {
+  text-align: center; /* יישור למרכז */
+  font-size: 2em; /* גודל הגופן */
+  color: #333; /* צבע הטקסט */
+}
+
+/* עיצוב פסקה */
+p {
+  text-align: center; /* יישור למרכז */
+  font-size: 1.1em; /* גודל הגופן */
+  color: #666; /* צבע הטקסט */
+  line-height: 1.5; /* מרווח בין שורות */
+  margin-top: 0; /* הסרת המרווח העליון */
+  margin-bottom: 10px; /* הוספת מרווח תחתון קטן */
+}
+
+/* הסרת המרווח התחתון מהפסקה האחרונה */
+p:last-child {
+  margin-bottom: 0; /* הסרת המרווח התחתון */
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; /* קובע את הסיידבר לצד ימין */
+  top: 50%; /* ממקם את הסיידבר במרכז המסך באופן אנכי */
+  right: 0; /* צמוד לצד ימין */
+  transform: translateY(-50%); /* מתקן את המיקום כך שהמרכז יהיה באמת במרכז */
+  background-color: #f9f9f9; /* צבע רקע */
+  padding: 20px; /* פדינג כללי */
+  border-radius: 10px 0 0 10px; /* קימור פינות */
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* הוספת צל */
+}
+
+.stat {
+  margin: 10px 0; /* מרווח בין המלבנים */
+}
+
+.stat p {
+  margin: 0; /* הסרת המרווח הכללי */
+  font-size: 1em; /* גודל טקסט */
+}
+
+.stat span {
+  font-size: 1.2em; /* גודל טקסט גדול יותר למספרים */
+  font-weight: bold; /* הדגשת הטקסט */
+}
+
